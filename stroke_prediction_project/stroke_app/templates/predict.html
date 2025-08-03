@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Predict{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'ml_theme/css/predict.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Predict with ML</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Predict</button>
+    </form>
+    {% if prediction %}
+        <div class="prediction-result">
+            <h2>Prediction Result</h2>
+            <p>Prediction: {{ prediction }}</p>
+        </div>
+    {% endif %}
+{% endblock %}

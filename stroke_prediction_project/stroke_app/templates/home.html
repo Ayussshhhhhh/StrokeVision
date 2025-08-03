@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'ml_theme/css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="welcome-section">
+        <img src="{% static 'ml_theme/images/ml_icon.png' %}" alt="ML Icon" class="ml-icon">
+        <h1>Welcome to ML Prediction</h1>
+        <p>Use machine learning to predict outcomes with ease.</p>
+        <p><a href="{% url 'predict' %}">Go to Prediction Form</a></p>
+    </div>
+{% endblock %}
